@@ -108,23 +108,37 @@ export default function Home() {
 
   return (
     <div className=" 
+    min-h-screen w-full bg-[#0d1b2a] text-white flex flex-col gap-y-14 justify-center items-center
+    sm:min-h-screen sm:w-full sm:bg-[#0d1b2a] sm:text-white sm:flex sm:flex-col sm:gap-y-14 sm:justify-center sm:items-center
+    md:min-h-screen md:w-full md:bg-[#0d1b2a] md:text-white md:flex md:flex-col md:gap-y-14 md:justify-center md:items-center
     lg:min-h-screen lg:w-full lg:bg-[#0d1b2a] lg:text-white lg:flex lg:flex-col lg:gap-y-14 lg:justify-center lg:items-center
     xl:min-h-screen xl:w-full xl:bg-[#0d1b2a] xl:text-white xl:flex xl:flex-col xl:gap-y-14 xl:justify-center xl:items-center ">
-      
+
       <Navbar />
 
       { loading === true ? (
-        // <LoadingComponent />
         <div className="
+        h-[80vh] w-full bg-[#0d1b2a] text-white flex flex-col gap-y-5 justify-center items-center
+        sm:h-[80vh] sm:w-full sm:bg-[#0d1b2a] sm:text-white sm:flex sm:flex-col sm:gap-y-5 sm:justify-center sm:items-center
+        md:h-[80vh] md:w-full md:bg-[#0d1b2a] md:text-white md:flex md:flex-col md:gap-y-5 md:justify-center md:items-center
         lg:h-[80vh] lg:w-full lg:bg-[#0d1b2a] lg:text-white lg:flex lg:flex-col lg:gap-y-5 lg:justify-center lg:items-center
         xl:h-[80vh] xl:w-full xl:bg-[#0d1b2a] xl:text-white xl:flex xl:flex-col xl:gap-y-5 xl:justify-center xl:items-center ">
           <div className="
+          h-[33%] w-[98%] bg-[#102234] rounded-lg
+          sm:h-[33%] sm:w-[98%] sm:bg-[#102234] sm:rounded-xl
+          md:h-[33%] md:w-[98%] md:bg-[#102234] md:rounded-xl
           lg:h-[33%] lg:w-[98%] lg:bg-[#102234] lg:rounded-xl
           xl:h-[33%] xl:w-[98%] xl:bg-[#102234] xl:rounded-xl "></div>
           <div className="
+          h-[33%] w-[98%] bg-[#102234] rounded-lg
+          sm:h-[33%] sm:w-[98%] sm:bg-[#102234] sm:rounded-xl
+          md:h-[33%] md:w-[98%] md:bg-[#102234] md:rounded-xl
           lg:h-[33%] lg:w-[98%] lg:bg-[#102234] lg:rounded-xl
           xl:h-[33%] xl:w-[98%] xl:bg-[#102234] xl:rounded-xl "></div>
           <div className="
+          h-[33%] w-[98%] bg-[#102234] rounded-lg
+          sm:h-[33%] sm:w-[98%] sm:bg-[#102234] sm:rounded-xl
+          md:h-[33%] md:w-[98%] md:bg-[#102234] md:rounded-xl
           lg:h-[33%] lg:w-[98%] lg:bg-[#102234] lg:rounded-xl
           xl:h-[33%] xl:w-[98%] xl:bg-[#102234] xl:rounded-xl "></div>
         </div>
@@ -133,6 +147,9 @@ export default function Home() {
         <>
           {/* ACTION GAMES */}
           <div className="
+          h-full w-[96%] bg-[#102234] rounded-lg border border-[#219ebc]
+          sm:h-full sm:w-[96%] sm:bg-[#102234] sm:rounded-lg sm:border sm:border-[#219ebc]
+          md:h-full md:w-[96%] md:bg-[#102234] md:rounded-lg md:border md:border-[#219ebc]
           lg:h-full lg:w-[96%] lg:bg-[#102234] lg:rounded-lg lg:border lg:border-[#219ebc]
           xl:h-full xl:w-[96%] xl:bg-[#102234] xl:rounded-lg xl:border xl:border-[#219ebc] ">
             <GameCategoryGrid gameList={actionGames} />
@@ -140,12 +157,18 @@ export default function Home() {
 
           {/* ADVENTURE GAMES */}
           <div className="
+          h-full w-[96%] bg-[#102234] rounded-lg border border-[#219ebc]
+          sm:h-full sm:w-[96%] sm:bg-[#102234] sm:rounded-lg sm:border sm:border-[#219ebc]
+          md:h-full md:w-[96%] md:bg-[#102234] md:rounded-lg md:border md:border-[#219ebc]
           lg:h-full lg:w-[96%] lg:bg-[#102234] lg:rounded-lg lg:border lg:border-[#219ebc]
           xl:h-full xl:w-[96%] xl:bg-[#102234] xl:rounded-lg xl:border xl:border-[#219ebc] ">
             <GameCategoryGrid gameList={adventureGames} />
           </div>
 
           <div className="
+          h-full w-[96%]
+          sm:h-full sm:w-[96%]
+          md:h-full md:w-[96%]
           lg:h-full lg:w-[96%]
           xl:h-full xl:w-[96%]">
             <Banner />
@@ -153,6 +176,9 @@ export default function Home() {
 
           {/* ARCADE GAMES */}
           <div className="
+          h-full w-[96%] bg-[#102234] rounded-lg border border-[#219ebc]
+          sm:h-full sm:w-[96%] sm:bg-[#102234] sm:rounded-lg sm:border sm:border-[#219ebc]
+          md:h-full md:w-[96%] md:bg-[#102234] md:rounded-lg md:border md:border-[#219ebc]
           lg:h-full lg:w-[96%] lg:bg-[#102234] lg:rounded-lg lg:border lg:border-[#219ebc]
           xl:h-full xl:w-[96%] xl:bg-[#102234] xl:rounded-lg xl:border xl:border-[#219ebc] ">
             <GameCategoryGrid gameList={arcadeGames} />
@@ -160,6 +186,9 @@ export default function Home() {
 
           {/* STRATEGY GAMES */}
           <div className="
+          h-full w-[96%] bg-[#102234] rounded-lg border border-[#219ebc]
+          sm:h-full sm:w-[96%] sm:bg-[#102234] sm:rounded-lg sm:border sm:border-[#219ebc]
+          md:h-full md:w-[96%] md:bg-[#102234] md:rounded-lg md:border md:border-[#219ebc]
           lg:h-full lg:w-[96%] lg:bg-[#102234] lg:rounded-lg lg:border lg:border-[#219ebc]
           xl:h-full xl:w-[96%] xl:bg-[#102234] xl:border xl:border-[#219ebc] xl:rounded-lg ">
             <GameCategoryGrid gameList={strategyGames} />
