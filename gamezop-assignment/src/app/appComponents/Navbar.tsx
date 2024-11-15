@@ -7,14 +7,14 @@ function Navbar() {
     const gameCategories = ["Action", "Adventure", "Arcade", "Puzzle", "Sports", "Strategy"];
 
     return (
-        <div className='px-10 h-28 w-[98%] bg-[#102234] rounded-xl flex justify-evenly items-center ' >
+        <div className=' mt-10 px-10 h-28 w-[98%] bg-[#102234] rounded-xl flex justify-evenly items-center ' >
 
             <div className='text-white text-2xl font-extrabold' >
                 Gamezop
             </div>
 
-            { gameCategories.map( currCategory => 
-                <Category category={currCategory} />
+            { gameCategories.map( (currCategory, idx) => 
+                <Category key={idx} category={currCategory} />
             )}
 
             <div>
