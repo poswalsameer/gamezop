@@ -33,47 +33,63 @@ export default function SearchButton(){
     }
 
   return (
-    <div className="flex justify-center items-center">
-      <form onSubmit={handleSearch} className="relative">
+    <div className="
+    lg:flex lg:justify-center lg:items-center
+    xl:flex xl:justify-center xl:items-center">
+      <form onSubmit={handleSearch} className="lg:relative xl:relative">
         {isExpanded ? (
-          <div className="relative">
+          <div className="lg:relative xl:relative">
             <Input
               ref={inputRef}
               type="text"
               placeholder="Search..."
               value={searchValue}
               onChange={(e) => setSearchValue(e.target.value)}
-              className="pl-10 pr-10 py-2 h-10 w-56 rounded-full border-2 border-gray-300 focus:border-blue-800 focus:outline-none transition-all duration-300 ease-in-out"
+              className="
+              lg:pl-5 lg:pr-5 lg:py-2 lg:h-10 lg:w-28 lg:rounded-full lg:border-2 lg:border-gray-300 lg:focus:border-blue-800 lg:focus:outline-none lg:transition-all lg:duration-300 lg:ease-in-out
+              xl:pl-10 xl:pr-10 xl:py-2 xl:h-10 xl:w-56 xl:rounded-full xl:border-2 xl:border-gray-300 xl:focus:border-blue-800 xl:focus:outline-none xl:transition-all xl:duration-300 xl:ease-in-out"
             />
-            <Button
+            {/* <Button
               type="submit"
               size="icon"
               variant="ghost"
-              className="hover:bg-transparent absolute left-2 top-1/2 transform -translate-y-1/2"
+              className="
+              lg:hover:bg-transparent lg:absolute lg:left-2 lg:top-1/2 lg:transform lg:-translate-y-1/2
+              xl:hover:bg-transparent xl:absolute xl:left-2 xl:top-1/2 xl:transform xl:-translate-y-1/2"
             >
-              <Search className="h-5 w-5 text-gray-500" />
-              <span className="sr-only">Search</span>
-            </Button>
+              <Search className="
+              lg:h-5 lg:w-5 lg:text-gray-500
+              xl:h-5 xl:w-5 xl:text-gray-500" />
+              <span className="lg:sr-only xl:sr-only">Search</span>
+            </Button> */}
             <Button
               type="button"
               variant="ghost"
               size="icon"
               onClick={handleCollapse}
-              className="hover:bg-transparent absolute right-2 top-1/2 transform -translate-y-1/2"
+              className="
+              lg:hover:bg-transparent lg:absolute lg:right-2 lg:top-1/2 lg:transform lg:-translate-y-1/2
+              xl:hover:bg-transparent xl:absolute xl:right-2 xl:top-1/2 xl:transform xl:-translate-y-1/2"
             >
-              <X className="h-4 w-4 text-gray-500" />
-              <span className="sr-only">Close</span>
+              <X className="
+              lg:h-5 lg:w-5 lg:text-gray-500
+              xl:h-4 xl:w-4 xl:text-gray-500" />
+              <span className="lg:sr-only xl:sr-only">Close</span>
             </Button>
           </div>
         ) : (
           <Button
             type="button"
             size="icon"
-            className="rounded-full h-10 w-10"
+            className="
+            lg:rounded-full lg:h-10 lg:w-10
+            xl:rounded-full xl:h-10 xl:w-10"
             onClick={handleExpand}
           >
-            <Search className="h-5 w-5" />
-            <span className="sr-only">Expand search</span>
+            <Search className="
+            lg:h-5 lg:w-5
+            xl:h-5 xl:w-5" />
+            <span className="lg:sr-only xl:sr-only">Expand search</span>
           </Button>
         )}
       </form>
