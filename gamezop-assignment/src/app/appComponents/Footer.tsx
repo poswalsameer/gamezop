@@ -2,7 +2,7 @@ export default function Footer() {
     return (
         <footer className="w-full bg-[#102234] text-gray-400 py-12">
           <div className="container mx-auto px-4 space-y-8 text-center">
-            {/* Navigation Links */}
+            
             <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2">
               {["Terms of Use", "Privacy Policy", "About", "Jobs", "Partner With Us"].map((item) => (
                 <a
@@ -15,7 +15,6 @@ export default function Footer() {
               ))}
             </nav>
     
-            {/* Description Paragraphs */}
             <div className="space-y-6 max-w-4xl mx-auto">
               <p className="text-sm sm:text-base leading-relaxed">
                 Gamezop is a plug-and-play gaming platform that any app or website can integrate to bring casual gaming for its users. Gamezop also operates Quizzop, a quizzing platform, that digital products can add as a trivia section.
@@ -30,7 +29,6 @@ export default function Footer() {
               </p>
             </div>
     
-            {/* Call to Action */}
             <p className="text-sm sm:text-base">
               Increase ad revenue and engagement on your app / website with games, quizzes, astrology, and cricket content. Visit:{" "}
               <a 

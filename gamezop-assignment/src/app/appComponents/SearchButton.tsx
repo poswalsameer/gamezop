@@ -7,8 +7,8 @@ import { Input } from "@/components/ui/input"
 import { Search, X } from "lucide-react"
 
 export default function SearchButton(){
-    const [isExpanded, setIsExpanded] = useState(false)
-    const [searchValue, setSearchValue] = useState('')
+    const [isExpanded, setIsExpanded] = useState<boolean>(false)
+    const [searchValue, setSearchValue] = useState<string>('')
     const inputRef = useRef<HTMLInputElement>(null)
   
     useEffect(() => {
@@ -25,12 +25,6 @@ export default function SearchButton(){
       setIsExpanded(false)
       setSearchValue('')
     }
-  
-    const handleSearch = (e: React.FormEvent) => {
-      e.preventDefault()
-      console.log('Searching for:', searchValue)
-      // Implement your search logic here
-    }
 
   return (
     <div className="
@@ -39,7 +33,7 @@ export default function SearchButton(){
     md:flex md:justify-center md:items-center
     lg:flex lg:justify-center lg:items-center
     xl:flex xl:justify-center xl:items-center">
-      <form onSubmit={handleSearch} className="relative sm:relative md:relative lg:relative xl:relative">
+      <form className="relative sm:relative md:relative lg:relative xl:relative">
         {isExpanded ? (
           <div className="relative sm:relative md:relative lg:relative xl:relative">
             <Input
@@ -55,19 +49,6 @@ export default function SearchButton(){
               lg:pl-5 lg:pr-5 lg:py-2 lg:h-10 lg:w-28 lg:rounded-full lg:border-2 lg:border-gray-300 lg:focus:border-blue-800 lg:focus:outline-none lg:transition-all lg:duration-300 lg:ease-in-out
               xl:pl-10 xl:pr-10 xl:py-2 xl:h-10 xl:w-56 xl:rounded-full xl:border-2 xl:border-gray-300 xl:focus:border-blue-800 xl:focus:outline-none xl:transition-all xl:duration-300 xl:ease-in-out"
             />
-            {/* <Button
-              type="submit"
-              size="icon"
-              variant="ghost"
-              className="
-              lg:hover:bg-transparent lg:absolute lg:left-2 lg:top-1/2 lg:transform lg:-translate-y-1/2
-              xl:hover:bg-transparent xl:absolute xl:left-2 xl:top-1/2 xl:transform xl:-translate-y-1/2"
-            >
-              <Search className="
-              lg:h-5 lg:w-5 lg:text-gray-500
-              xl:h-5 xl:w-5 xl:text-gray-500" />
-              <span className="lg:sr-only xl:sr-only">Search</span>
-            </Button> */}
             <Button
               type="button"
               variant="ghost"

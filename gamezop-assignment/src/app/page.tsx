@@ -6,15 +6,61 @@ import Footer from "./appComponents/Footer";
 import GameCategoryGrid from "./appComponents/GameCategoryGrid";
 import Navbar from "./appComponents/Navbar";
 
+interface game {
+  code: string;
+  url: string;
+  name: {
+    en: string;
+    [key: string]: string;
+  };
+  isPortrait: boolean;
+  description: {
+    en: string;
+    [key: string]: string;
+  };
+  gamePreviews: {
+    en: string;
+    [key: string]: string;
+  };
+  assets: {
+    cover: string;
+    brick: string;
+    thumb: string;
+    wall: string;
+    square: string;
+    screens: string[];
+    coverTiny: string;
+    brickTiny: string;
+  };
+  categories: {
+    en: string[];
+    [key: string]: string[];
+  };
+  tags: {
+    en: string[];
+    [key: string]: string[];
+  };
+  width: number;
+  height: number;
+  colorMuted: string;
+  colorVibrant: string;
+  privateAllowed: boolean;
+  rating: number;
+  numberOfRatings: number;
+  gamePlays: number;
+  hasIntegratedAds: boolean;
+}
+
+
 export default function Home() {
 
   const [gameList, setGameList] = useState<[]>([]);
-  const [actionGames, setActionGames] = useState<any[]>([]);
-  const [adventureGames, setAdventureGames] = useState<any[]>([]);
-  const [arcadeGames, setArcadeGames] = useState<any[]>([]);
-  const [puzzleGames, setPuzzleGames] = useState<any[]>([]);
-  const [sportsGames, setSportsGames] = useState<any[]>([]);
-  const [strategyGames, setStrategyGames] = useState<any[]>([]);
+  const [actionGames, setActionGames] = useState<game[]>([]);
+  const [adventureGames, setAdventureGames] = useState<game[]>([]);
+  const [arcadeGames, setArcadeGames] = useState<game[]>([]);
+  const [puzzleGames, setPuzzleGames] = useState<game[]>([]);
+  const [sportsGames, setSportsGames] = useState<game[]>([]);
+  const [strategyGames, setStrategyGames] = useState<game[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
 
   const fetchGameData = () => {
@@ -49,7 +95,7 @@ export default function Home() {
 
   useEffect(() => {
     if (gameList.length > 0) {
-      console.log(gameList); // Log the fetched games once the list is available
+      console.log(gameList); 
 
       const actionGamesArr: any[] = [];
       const adventureGamesArr: any[] = [];
@@ -58,9 +104,9 @@ export default function Home() {
       const sportsGamesArr: any[] = [];
       const strategyGamesArr: any[] = [];
 
-      // Categorize games once the gameList is fetched
+      // SETTING THE GAME INTO STATES CATEGORY-WISE
       gameList.forEach((game: any) => {
-        game.categories.en.forEach((category: any) => {
+        game.categories.en.forEach((category: string) => {
           switch (category) {
             case "Action":
               actionGamesArr.push(game);
@@ -86,7 +132,6 @@ export default function Home() {
         });
       });
 
-      // Update state with categorized games
       setActionGames(actionGamesArr);
       setAdventureGames(adventureGamesArr);
       setArcadeGames(arcadeGamesArr);
@@ -95,16 +140,6 @@ export default function Home() {
       setStrategyGames(strategyGamesArr);
     }
   }, [gameList]);
-
-  // useEffect(() => {
-  //   // Log after the categorized games state changes
-  //   console.log("Action Games:", actionGames);
-  //   console.log("Adventure Games:", adventureGames);
-  //   console.log("Arcade Games:", arcadeGames);
-  //   console.log("Puzzle Games:", puzzleGames);
-  //   console.log("Sports Games:", sportsGames);
-  //   console.log("Strategy Games:", strategyGames);
-  // }, [actionGames, adventureGames, arcadeGames, puzzleGames, sportsGames, strategyGames]);
 
   return (
     <div className=" 
@@ -165,6 +200,7 @@ export default function Home() {
             <GameCategoryGrid gameList={adventureGames} />
           </div>
 
+          {/* BANNERS */}
           <div className="
           h-full w-[96%]
           sm:h-full sm:w-[96%]

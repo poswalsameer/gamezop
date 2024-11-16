@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -141,13 +140,6 @@ const SingleCategoryDiv = ({ gameList }: { gameList: any }) => {
 const GameCategoryGrid = ({ gameList }: { gameList: any }) => {
   return (
     <SingleCategoryDiv gameList={gameList} />
-    // <div>
-    //   {1 > 0 ? (
-    //     <SingleCategoryDiv gameList={gameList} />
-    //   ) : (
-    //     <div> Loading... </div>
-    //   )}
-    // </div>
   );
 };
 
